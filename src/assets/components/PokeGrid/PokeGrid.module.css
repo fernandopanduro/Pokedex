@@ -1,0 +1,11 @@
+.pokeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: var(--mg-m);
+}
+
+@media (max-width: 420px) {
+    .pokeGrid {
+        grid-template-columns: 100%;
+    }
+}
