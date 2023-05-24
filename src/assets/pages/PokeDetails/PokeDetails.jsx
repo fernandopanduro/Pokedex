@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom'
-import styles from './PokeDetails.module.css'
 import { useFetch } from '../../hooks/useFetch'
+import styles from './PokeDetails.module.css'
 
 export default function PokeDetails() {
 
     const params = useParams()
-    const { data } = useFetch('https://pokeapi.co/api/v2/pokemon/' + params.pokemonName)
+    const url = 'https://pokeapi.co/api/v2/pokemon/'
+    const { data } = useFetch(url + params.pokemonName)
 
 
   return (

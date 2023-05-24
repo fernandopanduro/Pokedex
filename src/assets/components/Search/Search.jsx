@@ -1,35 +1,37 @@
 import { FaSearch } from "react-icons/fa";
-import { useQuery } from '../../hooks/useQuery';
-import { useNavigate } from 'react-router-dom';
 
 import styles from './Search.module.css'
+import { useContext } from "react";
+import { PokemonContext } from "../../context/PokemonContext";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Search() {
-  const query = useQuery();
-  const search = query.get("search");
-  const navigate = useNavigate();
 
-  const handleSumit = e => {
+  const {onInputChange, valueSearch, onResetForm} = useContext(PokemonContext)
+
+  const navigate = useNavigate()
+
+  const onSearchSubmit = e => {
     e.preventDefault()
-  }
-  const handleInput = e => {
-    const value = e.target.value;
-    navigate("/?search=" + value);
+    navigate('/search', {
+      state: valueSearch
+    })
+    onResetForm()
   }
 
   return (
-    <form className={styles.searchContainer} onSubmit={handleSumit}>
+    <form className={styles.searchContainer} onSubmit={onSearchSubmit}>
       <div className={styles.searchBox}>
         <input 
-          type="text" 
+          type="search" 
           className={styles.searchInput}
           autoFocus
-          value={search ?? ''}
-          name='search'
+          value={valueSearch}
+          onChange={onInputChange}
+          name='valueSearch'
           aria-label='Search Pokemons'
           placeholder='Pikachu'
-          onChange={handleInput}
         />
         <button><FaSearch className={styles.searchButton} size={20} /></button>  
       </div>

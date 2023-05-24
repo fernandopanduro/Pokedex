@@ -1,11 +1,11 @@
 import PokeCard from '../PokeCard/PokeCard'
 import styles from './PokeGrid.module.css'
-import { useFetch } from '../../hooks/useFetch'
+import { useContext } from 'react'
+import { PokemonContext } from '../../context/PokemonContext'
 
 export default function PokeGrid() {
-
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
-  const { data } = useFetch(url)
+  
+  const { data } = useContext(PokemonContext)
 
   return (
     <ul className={`content ${styles.pokeGrid}`}>

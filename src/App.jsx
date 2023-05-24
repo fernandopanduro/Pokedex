@@ -3,6 +3,7 @@ import './App.css'
 import Home from './assets/pages/Home/Home'
 import PokeDetails from './assets/pages/PokeDetails/PokeDetails'
 import Search from './assets/components/Search/Search'
+import SearchPage from './assets/pages/SearchPage/SearchPage'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/pokemon/:pokemonName' element={<PokeDetails />} />
+          <Route path='/search' element={<SearchPage />} />
           <Route path='*' element={<Navigate replace to='/' />} />
         </Routes>
       </main>
