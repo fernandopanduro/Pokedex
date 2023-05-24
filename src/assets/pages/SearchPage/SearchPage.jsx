@@ -17,7 +17,7 @@ export default function SearchPage() {
   }
 
   return (
-    <ul className={`content ${styles.pokeGrid}`}>
+    <ul className={`container ${styles.pokeGrid}`}>
       {
         filteredPokemons?.map((item, index) => <PokeCard pokemon={item} key={index} />)
       }
