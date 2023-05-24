@@ -1,9 +1,6 @@
-.results {
-    margin-bottom: var(--mg-m);
-}
-
 .pokeGrid {
     display: grid;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
     gap: var(--mg-m);
 }

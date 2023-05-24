@@ -17,10 +17,13 @@ export default function SearchPage() {
   }
 
   return (
-    <ul className={`container ${styles.pokeGrid}`}>
-      {
-        filteredPokemons?.map((item, index) => <PokeCard pokemon={item} key={index} />)
-      }
-    </ul>
+    <>
+      <p className={styles.results}>There are {filteredPokemons?.length} results:</p>
+      <ul className={`container ${styles.pokeGrid}`}>
+        {
+          filteredPokemons?.map((item, index) => <PokeCard pokemon={item} key={index} />)
+        }
+      </ul>
+    </>
   )
 }

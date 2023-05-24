@@ -75,6 +75,11 @@ li {
     text-align: center;
 }
 
+button {
+	background-color: transparent;
+	border: none;
+}
+
 /* Types of Pokemon */
 .water {
 	background-color: var(--color-water);

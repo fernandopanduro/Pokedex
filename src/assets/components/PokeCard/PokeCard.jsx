@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
-
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import styles from './PokeCard.module.css'
+import { useContextPokemon } from "../../hooks/useContextPokemon";
 
 export default function PokeCard({ pokemon }) {
   const url = pokemon.url
   const { data } = useFetch(url)
+  const { addFavorite, removeFromFavorites, favorites } = useContextPokemon()
+
+  const checkPokemonInFavorite = () => favorites.some(item => item.name === pokemon.name)
+  const isPokemonInFavorite = checkPokemonInFavorite()
 
   return (
     <li className={styles.cardContainer}>
@@ -21,6 +26,17 @@ export default function PokeCard({ pokemon }) {
             }
           </div>
         </Link>
+        <button className={styles.btn} onClick={() => {
+          isPokemonInFavorite
+            ? removeFromFavorites(pokemon)
+            : addFavorite(pokemon)
+        }}>
+          {
+            isPokemonInFavorite
+              ? <AiFillHeart color="red" size={30} />
+              : <AiOutlineHeart color="red" size={30}/>
+          } 
+        </button>
     </li>
   )
 }

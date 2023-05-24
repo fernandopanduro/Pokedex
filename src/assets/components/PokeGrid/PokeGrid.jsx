@@ -8,11 +8,10 @@ export default function PokeGrid() {
   const { data } = useContext(PokemonContext)
 
   return (
-    <ul className={`content ${styles.pokeGrid}`}>
+    <ul className={`${styles.pokeGrid}`}>
       {
         data?.results?.map((item, index) => <PokeCard key={index} pokemon={item} />)
       }
-
     </ul>
   )
 }
