@@ -55,6 +55,17 @@
 	color: #888;
 }
 
+@media (max-width: 468px) {
+	.name {
+		font-size: 2rem;
+	}
+	
+	.id {
+		font-size: 2rem;
+		color: #888;
+	}
+}
+
 .types {
     display: flex;
     justify-content: center;

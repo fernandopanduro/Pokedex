@@ -4,6 +4,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { useContextPokemon } from "../../hooks/useContextPokemon";
 import styles from './PokeCard.module.css'
 import Spinner from "../Spinner/Spinner";
+import { Fade } from "react-reveal";
 
 export default function PokeCard({ pokemon }) {
   const url = pokemon.url
@@ -16,6 +17,7 @@ export default function PokeCard({ pokemon }) {
   return (
     <li className={styles.cardContainer}>
       {loading && <Spinner />}
+      <Fade bottom>
         <Link to={'/pokemon/' + data?.name} className={styles.card}>
           <img className={styles.img} src={data?.sprites.other.home.front_default} alt={data?.name} />
           <span className={styles.id}>N° {data?.id}</span>
@@ -28,17 +30,18 @@ export default function PokeCard({ pokemon }) {
             }
           </div>
         </Link>
-        <button className={styles.btn} onClick={() => {
-          isPokemonInFavorite
+          <button className={styles.btn} onClick={() => {
+            isPokemonInFavorite
             ? removeFromFavorites(pokemon)
             : addFavorite(pokemon)
-        }}>
-          {
-            isPokemonInFavorite
+          }}>
+            {
+              isPokemonInFavorite
               ? <AiFillHeart color="red" size={30} />
               : <AiOutlineHeart color="red" size={30}/>
-          } 
-        </button>
+            } 
+          </button>
+        </Fade>
     </li>
   )
 }

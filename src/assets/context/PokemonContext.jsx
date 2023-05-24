@@ -7,7 +7,7 @@ export const PokemonContext = createContext()
 export function PokemonProvaider({children}) {
 
     const [offset, setOffset] =useState(0)
-    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
+    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${offset}`)
     const { data } = useFetch(url)
     
     // Form

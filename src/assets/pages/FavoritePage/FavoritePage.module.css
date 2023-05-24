@@ -3,6 +3,7 @@
     justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
     gap: var(--mg-m);
+    margin-bottom: var(--mg-m);
 }
 
 @media (max-width: 420px) {
@@ -17,11 +18,24 @@
     margin-bottom: var(--mg-m);
 }
 
+@media (max-width: 720px) {
+    .favoriteHeader {
+        flex-direction: column;
+    }
+}
+
+
 .btn {
     background-color: white;
     padding: 0 var(--mg-m);
     font-size: 1rem;
     border-radius: .3125rem;
+}
+
+@media (max-width: 720px) {
+    .btn {
+        padding: var(--mg-s) 0;
+    }
 }
 
 .results {

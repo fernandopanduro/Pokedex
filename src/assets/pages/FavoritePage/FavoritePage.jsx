@@ -15,13 +15,13 @@ export default function FavoritePage() {
 
       <p className={styles.results}>There are <strong>{favorites?.length}</strong> favorite:</p>
 
-        <ul className={`container ${styles.pokeGrid}`}>
-          {
-            favorites.map((favorite, index) => (
-              <PokeCard pokemon={favorite} key={index} />
-            ))
-          }
-        </ul>
+      <ul className={`container ${styles.pokeGrid}`}>
+        {
+          favorites.map((favorite, index) => (
+            <PokeCard pokemon={favorite} key={index} />
+          ))
+        }
+      </ul>
     </>
   )
 }
