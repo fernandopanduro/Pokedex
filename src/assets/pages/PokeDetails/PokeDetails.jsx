@@ -1,13 +1,17 @@
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch'
 import styles from './PokeDetails.module.css'
+import Spinner from '../../components/Spinner/Spinner'
 
 export default function PokeDetails() {
 
-    const params = useParams()
-    const url = 'https://pokeapi.co/api/v2/pokemon/'
-    const { data } = useFetch(url + params.pokemonName)
+  const params = useParams()
+  const url = 'https://pokeapi.co/api/v2/pokemon/'
+  const { data, loading } = useFetch(url + params.pokemonName)
 
+  if (loading) {
+    return <Spinner />
+  }
 
   return (
     <div className={styles.pokeDetails}>
