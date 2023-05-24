@@ -14,6 +14,17 @@
 
 }
 
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    margin-top: var(--mg-m);
+    background: -webkit-linear-gradient(90deg, rgba(250,228,116,1) 0%, rgba(229,98,49,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;    
+}
+
 main {
     display: flex;
     flex-direction: column;

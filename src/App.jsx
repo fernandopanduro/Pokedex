@@ -15,7 +15,7 @@ function App() {
 
       <header className='header'>
         <Link to='/'>
-          <h1>POKEDEX</h1>
+          <h1 className='title'>POKEDEX</h1>
         </Link>
 
         <div className='container header__nav'>

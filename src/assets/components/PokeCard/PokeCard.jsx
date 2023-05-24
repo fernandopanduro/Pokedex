@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
-import styles from './PokeCard.module.css'
 import { useContextPokemon } from "../../hooks/useContextPokemon";
+import styles from './PokeCard.module.css'
+import Spinner from "../Spinner/Spinner";
 
 export default function PokeCard({ pokemon }) {
   const url = pokemon.url
   const { data } = useFetch(url)
-  const { addFavorite, removeFromFavorites, favorites } = useContextPokemon()
+  const { addFavorite, removeFromFavorites, favorites, loading } = useContextPokemon()
 
   const checkPokemonInFavorite = () => favorites.some(item => item.name === pokemon.name)
   const isPokemonInFavorite = checkPokemonInFavorite()
 
   return (
     <li className={styles.cardContainer}>
+      {loading && <Spinner />}
         <Link to={'/pokemon/' + data?.name} className={styles.card}>
           <img className={styles.img} src={data?.sprites.other.home.front_default} alt={data?.name} />
           <span className={styles.id}>N° {data?.id}</span>

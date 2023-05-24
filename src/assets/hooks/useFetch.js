@@ -4,11 +4,9 @@ export function useFetch(url) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [controller, setController] = useState(null)
 
     useEffect(() => {
         const abortController = new AbortController()
-        setController(abortController)
         setLoading(true)
         fetch(url, { signal: abortController.signal })
           .then(res => res.json())
@@ -20,12 +18,6 @@ export function useFetch(url) {
 
       }, [])
 
-      const handleCancelRequest = () => {
-        if (controller) {
-            controller.abort()
-            setError('Request cancelled')
-        }
-      }
 
-      return { data, loading, error, handleCancelRequest }
+      return { data, loading, error }
 }

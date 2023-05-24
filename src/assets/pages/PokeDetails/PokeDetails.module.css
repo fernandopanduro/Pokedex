@@ -1,0 +1,105 @@
+.pokeDetails {
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    gap: var(--mg-m);
+    padding-bottom: var(--mg-m);
+}
+
+@media (min-width: 768px) {
+	.pokeDetails {
+		flex-direction: row;
+	}
+}
+
+.img {
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+.about {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--mg-xl);
+}
+
+@media (min-width: 768px) {
+	.about {
+		width: 50%;
+	}
+}
+
+/* Description */
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: var(--mg-s);
+}
+
+.descriptionHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.name {
+	font-size: 3.5rem;
+}
+
+.id {
+	font-size: 3.5rem;
+	color: #888;
+}
+
+.types {
+    display: flex;
+    justify-content: center;
+    gap: var(--mg-s);
+}
+
+.type {
+    padding: 5px 10px;
+    border-radius: .3125rem;
+}
+
+/* Stats */
+.containerStats {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--mg-s);
+	align-items: center;
+	color: white;
+}
+
+.stats {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 1;
+}
+
+.statGroup {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.statGroup span {
+	flex: 20%;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.progressBar {
+	width: 100%;
+	height: 20px;
+	background: rgb(229,98,49);
+	background: linear-gradient(90deg, rgba(229,98,49,1) 0%, rgba(250,228,116,1) 0100%);
+	border-radius: 10px;
+}

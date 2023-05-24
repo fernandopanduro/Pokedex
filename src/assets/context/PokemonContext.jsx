@@ -10,6 +10,7 @@ export function PokemonProvaider({children}) {
     const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
     const { data } = useFetch(url)
     
+    // Form
     const { valueSearch, onInputChange, onResetForm} = useForm({
         valueSearch: ''
     })
@@ -19,9 +20,8 @@ export function PokemonProvaider({children}) {
 
     const addFavorite = (pokemon) => setFavorites([...favorites, pokemon])
     const clearFavorite = () => {setFavorites([])}
-    const removeFromFavorites = (pokemon) => {
-      setFavorites(prevState => prevState.filter(item => item.name !== pokemon.name))
-    }
+    const removeFromFavorites = (pokemon) => setFavorites(prevState => prevState.filter(item => item.name !== pokemon.name))
+    
 
 
   return (
@@ -30,7 +30,7 @@ export function PokemonProvaider({children}) {
         valueSearch,
         onInputChange,
         onResetForm,
-        data: data,
+        data,
         favorites,
         addFavorite,
         clearFavorite,

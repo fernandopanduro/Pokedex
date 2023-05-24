@@ -10,3 +10,20 @@
         grid-template-columns: 100%;
     }
 }
+
+.favoriteHeader {
+    display: flex;
+    gap: var(--mg-m);
+    margin-bottom: var(--mg-m);
+}
+
+.btn {
+    background-color: white;
+    padding: 0 var(--mg-m);
+    font-size: 1rem;
+    border-radius: .3125rem;
+}
+
+.results {
+    margin-bottom: var(--mg-m);
+}

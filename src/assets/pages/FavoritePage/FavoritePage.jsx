@@ -8,12 +8,12 @@ export default function FavoritePage() {
 
   return (
     <>
-      <div>
-        <h1>Favorite Pokemons</h1>
-        <button onClick={() => clearFavorite()}>Remove All Favorite</button>
+      <div className={styles.favoriteHeader}>
+        <h2 className={styles.title}>Favorite Pokemons</h2>
+        <button className={styles.btn} onClick={() => clearFavorite()}>Remove All From Favorites</button>
       </div>
 
-      <p className={styles.results}>There are {favorites?.length} favorite:</p>
+      <p className={styles.results}>There are <strong>{favorites?.length}</strong> favorite:</p>
 
         <ul className={`container ${styles.pokeGrid}`}>
           {
