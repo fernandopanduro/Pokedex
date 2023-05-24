@@ -20,7 +20,7 @@ function App() {
 
         <div className='container header__nav'>
           <Search />
-          <Link to='/favorite'>
+          <Link name='Favorites' to='/favorite'>
             <AiFillHeart color='red' size={50}/>
           </Link>
         </div>

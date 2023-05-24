@@ -30,7 +30,7 @@ export default function PokeCard({ pokemon }) {
             }
           </div>
         </Link>
-          <button className={styles.btn} onClick={() => {
+          <button name="Add favorite" className={styles.btn} onClick={() => {
             isPokemonInFavorite
             ? removeFromFavorites(pokemon)
             : addFavorite(pokemon)
