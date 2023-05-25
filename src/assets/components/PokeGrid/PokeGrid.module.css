@@ -1,3 +1,8 @@
+.containerPokeGrid {
+    display: flex;
+    flex-direction: column;
+}
+
 .pokeGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
@@ -8,4 +13,19 @@
     .pokeGrid {
         grid-template-columns: 100%;
     }
+}
+
+.btns {
+    width: 100%;
+    margin-top: var(--mg-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mg-s);
+}
+
+.btn {
+    background-color: white;
+    padding: var(--mg-s);
+    width: 9rem;
 }

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { useFetch } from "../hooks/useFetch"
 import { useForm } from "../hooks/useForm"
 
@@ -6,9 +6,8 @@ export const PokemonContext = createContext()
 
 export function PokemonProvaider({children}) {
 
-    const [offset, setOffset] =useState(0)
-    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${offset}`)
-    const { data } = useFetch(url)
+    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
+    const { data, loading } = useFetch(url)
     
     // Form
     const { valueSearch, onInputChange, onResetForm} = useForm({
@@ -22,7 +21,13 @@ export function PokemonProvaider({children}) {
     const clearFavorite = () => {setFavorites([])}
     const removeFromFavorites = (pokemon) => setFavorites(prevState => prevState.filter(item => item.name !== pokemon.name))
     
-
+    // Load More Pokemons
+    const nextPage = () => {
+      setUrl(data.next)
+    }
+    const prevPage = () => {
+      setUrl(data.previous)
+    }
 
   return (
     <PokemonContext.Provider 
@@ -34,7 +39,9 @@ export function PokemonProvaider({children}) {
         favorites,
         addFavorite,
         clearFavorite,
-        removeFromFavorites
+        removeFromFavorites,
+        nextPage,
+        prevPage
      }}
      >
         {children}
