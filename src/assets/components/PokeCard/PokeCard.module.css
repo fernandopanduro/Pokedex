@@ -21,6 +21,8 @@
 .img {
     max-height: 21.875rem;
     object-fit: contain;
+    width: auto;
+    height: auto;
 }
 
 .types {

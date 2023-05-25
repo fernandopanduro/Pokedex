@@ -19,7 +19,7 @@ export default function PokeCard({ pokemon }) {
       {loading && <Spinner />}
       <Fade bottom>
         <Link to={'/pokemon/' + data?.name} className={styles.card}>
-          <img className={styles.img} src={data?.sprites.other.home.front_default} alt={data?.name} />
+          <img loading="lazy" width='320px' height='320px' className={styles.img} src={data?.sprites.other.home.front_default} alt={data?.name} />
           <span className={styles.id}>N° {data?.id}</span>
           <h3 className={styles.name}>{data?.name.toUpperCase()}</h3>
           <div className={styles.types}>
