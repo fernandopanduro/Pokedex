@@ -3,6 +3,10 @@
 
 ¡Bienvenido a la Pokedex! 📚🔍 Descubre información detallada de todos los Pokémon, busca tus favoritos y 📊🔎 conoce sus estadísticas. Nuestra Pokedex es tu guía definitiva en el mundo Pokémon ¡Sumérgete en la aventura y conviértete en un maestro Pokémon! 🎮🌍💪
 
+## 🌐 Demo
+
+[🌐 Pokedex](https://pokedex-abeha.netlify.app/)
+
 ## ⚒️ Instalación
 
 ### Paso 1: Clonar el repositorio
@@ -15,7 +19,7 @@ Bifurcar el repositorio. luego clone el repositorio localmente haciendo:
 
 ### Paso 2: Instalar las dependencias
 
-Intalar todas las dependencias
+Instalar todas las dependencias
 
 ```bash
   npm install --force
@@ -30,7 +34,5 @@ Luego inicie el servidor de desarrollo:
 ```
 
 
-## Demo
 
-[🌐 Pokedex](https://pokedex-abeha.netlify.app/)
 
