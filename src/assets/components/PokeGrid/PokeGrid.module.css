@@ -28,4 +28,10 @@
     background-color: white;
     padding: var(--mg-s);
     width: 9rem;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.btn:hover {
+    background-color: aliceblue;
 }
