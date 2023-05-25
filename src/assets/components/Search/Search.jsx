@@ -1,22 +1,27 @@
-import { FaSearch } from "react-icons/fa";
-
 import styles from './Search.module.css'
-import { useContext } from "react";
-import { PokemonContext } from "../../context/PokemonContext";
+
+import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useContextPokemon } from '../../hooks/useContextPokemon';
 
 
 export default function Search() {
 
-  const {onInputChange, valueSearch, onResetForm} = useContext(PokemonContext)
+  const {onInputChange, valueSearch, onResetForm} = useContextPokemon()
 
   const navigate = useNavigate()
 
   const onSearchSubmit = e => {
     e.preventDefault()
-    navigate('/search', {
-      state: valueSearch
-    })
+    if (valueSearch === null) {
+      navigate('/search', {
+        state: 'null'
+      })
+    } else {
+      navigate('/search', {
+        state: valueSearch.toLowerCase()
+      })
+    }
     onResetForm()
   }
 

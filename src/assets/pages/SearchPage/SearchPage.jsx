@@ -7,9 +7,8 @@ import Spinner from "../../components/Spinner/Spinner"
 export default function SearchPage() {
 
   const location = useLocation()
+  const { data, loading } = useFetch('https://pokeapi.co/api/v2/pokemon?limit=1300&offset=0')
 
-
-  const { data, loading } = useFetch('https://pokeapi.co/api/v2/pokemon?limit=1500&offset=0')
   const filteredPokemons = data?.results.filter(pokemon => pokemon.name.includes(location.state))
 
   if(loading) {
