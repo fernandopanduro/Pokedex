@@ -19,7 +19,7 @@ export default function Search() {
       })
     } else {
       navigate('/search', {
-        state: valueSearch.toLowerCase()
+        state: valueSearch.toLowerCase().trim()
       })
     }
     onResetForm()
