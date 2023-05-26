@@ -1,6 +1,9 @@
 .cardContainer {
     position: relative;
     background-color: rgba(255, 255, 255, .1);
+    border-right: 1px solid rgba(255, 255, 255, .3);
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(.625rem);
     border-radius: .3125rem;
     padding: var(--mg-s);
 }

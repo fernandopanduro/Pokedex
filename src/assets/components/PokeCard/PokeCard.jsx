@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { useContextPokemon } from "../../hooks/useContextPokemon";
+import { Fade } from "react-reveal";
 import styles from './PokeCard.module.css'
 import Spinner from "../Spinner/Spinner";
-import { Fade } from "react-reveal";
 
 export default function PokeCard({ pokemon }) {
   const url = pokemon.url
